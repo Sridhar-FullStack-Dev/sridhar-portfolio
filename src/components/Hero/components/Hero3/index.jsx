@@ -1,4 +1,8 @@
-import Globe from "@/components/Globe";
+import dynamic from "next/dynamic";
+const Globe = dynamic(() => import("@/components/Globe"), {
+  ssr: false,
+  loading: () => <img src="/assets/placeholder.png"></img>,
+});
 
 export default function Hero3() {
   return (
