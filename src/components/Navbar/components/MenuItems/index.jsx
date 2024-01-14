@@ -2,10 +2,15 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const variants = {
+  clicked: { color: "#CEF34A", opacity: 1 },
+  notClicked: { color: "#FFF", opacity: 0.6 },
+};
+
 const Menu = [
   {
     name: "Home",
-    href: "/",
+    href: "#home",
   },
   {
     name: "About",
@@ -16,8 +21,8 @@ const Menu = [
     href: "#services",
   },
   {
-    name: "Projects",
-    href: "#projects",
+    name: "Works",
+    href: "#works",
   },
   {
     name: "Contact",
@@ -26,6 +31,12 @@ const Menu = [
 ];
 
 export default function MenuItems() {
+  const [isClickedNav, setIsClickedNav] = useState(null);
+
+  const handleClick = (index) => {
+    setIsClickedNav(index);
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: "-50px" }}
@@ -44,21 +55,24 @@ export default function MenuItems() {
           setIshovered(false);
         };
         return (
-          <div>
+          <div key={MenuKey}>
             <motion.div
-              initial={{ opacity: 0.6 }}
-              whileHover={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ ease: "easeInOut", duration: 1 }}
             >
               <Link
                 onMouseEnter={hoverEffectOn}
                 onMouseLeave={hoverEffectOff}
-                key={MenuKey}
                 href={Items.href}
                 className=" transition-all delay-100 duration-150 ease-linear text-sm"
               >
-                {Items.name}
+                <motion.span
+                  variants={variants}
+                  animate={isClickedNav === MenuKey ? "clicked" : "notClicked"}
+                  exit={{ opacity: 0 }}
+                  transition={{ ease: "easeInOut", duration: 1 }}
+                  onClick={() => handleClick(MenuKey)}
+                >
+                  {Items.name}
+                </motion.span>
               </Link>
             </motion.div>
 

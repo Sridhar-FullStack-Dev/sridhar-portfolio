@@ -18,10 +18,8 @@ export default function RootLayout({ children }) {
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
       </head>
       <body>
-        <main className="p-10">
-          <NavBar />
-          {children}
-        </main>
+        <NavBar />
+        <main className="p-10 mt-14">{children}</main>
       </body>
     </html>
   );

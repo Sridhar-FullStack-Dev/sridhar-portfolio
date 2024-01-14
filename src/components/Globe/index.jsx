@@ -1,9 +1,9 @@
 import { useRef } from "react";
-import { useLoader } from "@react-three/fiber";
-import { useFrame, Canvas } from "@react-three/fiber";
 import { useScroll } from "framer-motion";
 import { motion } from "framer-motion-3d";
+import { useLoader } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
+import { useFrame, Canvas } from "@react-three/fiber";
 import { TextureLoader } from "three/src/loaders/TextureLoader";
 
 export default function Globe() {

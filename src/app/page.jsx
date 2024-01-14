@@ -1,7 +1,9 @@
 "use client";
-import About from "@/components/About";
-import Hero from "@/components/Hero";
 import { useEffect } from "react";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Services from "@/components/Services";
+import Works from "@/components/Works";
 
 export default function Home() {
   useEffect(() => {
@@ -23,11 +25,17 @@ export default function Home() {
 
   return (
     <div data-scroll-container>
-      <section data-scroll-section className="mt-12" id="top">
+      <section data-scroll-section id="home">
         <Hero />
       </section>
-      <section data-scroll-section>
+      <section data-scroll-section id="about">
         <About />
+      </section>
+      <section data-scroll-section id="services">
+        <Services />
+      </section>
+      <section data-scroll-section id="services">
+        <Works />
       </section>
     </div>
   );
