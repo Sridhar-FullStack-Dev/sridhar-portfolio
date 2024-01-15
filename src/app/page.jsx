@@ -40,29 +40,31 @@ export default function Home() {
 
   return (
     <>
-      <div data-scroll-container>
-        <section data-scroll-section id="home">
-          <Hero />
-        </section>
-        <section data-scroll-section id="about">
-          <About />
-        </section>
-        <section data-scroll-section id="services">
-          <Services />
-        </section>
-        <section data-scroll-section id="services">
-          <Works />
-        </section>
-        <section data-scroll-section id="services">
-          <Doodle />
-        </section>
-        <section data-scroll-section id="services">
-          <Contacts />
-        </section>
-        <section data-scroll-section id="services">
-          <Footer />
-        </section>
-      </div>
+      <main className="p-10 mt-14">
+        <div data-scroll-container>
+          <section data-scroll-section id="home">
+            <Hero />
+          </section>
+          <section data-scroll-section id="about">
+            <About />
+          </section>
+          <section data-scroll-section id="services">
+            <Services />
+          </section>
+          <section data-scroll-section id="services">
+            <Works />
+          </section>
+          <section data-scroll-section id="services">
+            <Doodle />
+          </section>
+          <section data-scroll-section id="services">
+            <Contacts />
+          </section>
+          <section data-scroll-section id="services">
+            <Footer />
+          </section>
+        </div>
+      </main>
 
       {isLoading && <Preloader />}
     </>

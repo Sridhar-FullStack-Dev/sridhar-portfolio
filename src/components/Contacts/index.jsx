@@ -1,7 +1,49 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { HiOutlineArrowRight } from "react-icons/hi2";
 
 export default function Contacts() {
+  const [Loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  // Mailer
+  const [firstName, setFirstName] = useState("");
+  const [secondName, setSecondName] = useState("");
+  const [email, setEmail] = useState("");
+  const [description, setDescription] = useState("");
+
+  const sendMail = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/Email", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          description,
+        }),
+      });
+
+      if (response.ok) {
+        console.log(await response.json());
+        setSuccess(true);
+      } else {
+        console.log("Failed", response.status);
+        setSuccess(false);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setSuccess(false);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div data-scroll data-scroll-speed="0.3">
       <motion.div
@@ -27,7 +69,7 @@ export default function Contacts() {
         </div>
 
         <div className="text-2xl px-14 font-bold mt-5">
-          <form>
+          <form onSubmit={sendMail}>
             {/* First Name */}
             <div className="flex justify-between items-center gap-8">
               <div className="w-1/2 flex">
@@ -38,6 +80,10 @@ export default function Contacts() {
                   First Name&nbsp; <sup className="text-red-600">*</sup>
                 </label>
                 <input
+                  value={firstName}
+                  onChange={(e) => {
+                    setFirstName(e.target.value);
+                  }}
                   placeholder="first name"
                   type="text"
                   name="firstName"
@@ -55,6 +101,10 @@ export default function Contacts() {
                   Second Name&nbsp; <sup className="text-red-600">*</sup>
                 </label>
                 <input
+                  value={secondName}
+                  onChange={(e) => {
+                    setSecondName(e.target.value);
+                  }}
                   placeholder="second name"
                   type="text"
                   name="secondName"
@@ -74,6 +124,10 @@ export default function Contacts() {
                   Email&nbsp; <sup className="text-red-600">*</sup>
                 </label>
                 <input
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
                   placeholder="email"
                   type="email"
                   name="email"
@@ -90,6 +144,10 @@ export default function Contacts() {
                   Description&nbsp; <sup className="text-red-600">*</sup>
                 </label>
                 <input
+                  value={description}
+                  onChange={(e) => {
+                    setDescription(e.target.value);
+                  }}
                   placeholder="description (optional)"
                   type="text"
                   name="description"
@@ -103,9 +161,16 @@ export default function Contacts() {
                 type="submit"
                 className="h-20 w-52 border border-black bg-transparent rounded-full tracking-wide"
               >
-                <p className="flex items-center justify-center gap-4">
-                  Send <HiOutlineArrowRight />
-                </p>
+                {Loading ? (
+                  "loading..."
+                ) : success ? (
+                  "success"
+                ) : (
+                  <div className="flex items-center justify-center gap-4">
+                    Send
+                    <HiOutlineArrowRight />
+                  </div>
+                )}
               </button>
             </div>
           </form>

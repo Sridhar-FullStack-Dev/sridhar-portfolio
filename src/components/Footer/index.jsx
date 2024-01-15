@@ -54,6 +54,7 @@ export default function Footer() {
       width: "100%",
       duration: 1,
       ease: "power1.inOut",
+      yoyo: true,
       scrollTrigger: {
         trigger: imageRef.current,
         start: "top center",

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -37,14 +37,13 @@ export default function Works() {
           <div className="flex items-center gap-4">
             <div className="flex flex-col gap-4">
               {Works1.map((work, works1) => (
-                <>
+                <React.Fragment key={works1}>
                   <Link
                     onMouseEnter={() => {
                       setIsHovered(works1);
                       setIsHoveredSecond(null);
                     }}
                     onMouseLeave={() => setIsHovered(null)}
-                    key={works1}
                     href={work.href}
                   >
                     <div className="border border-black p-4 w-64 rounded flex justify-between items-center gap-4">
@@ -76,13 +75,13 @@ export default function Works() {
                       </motion.div>
                     )}
                   </AnimatePresence>
-                </>
+                </React.Fragment>
               ))}
             </div>
 
             <div className="flex flex-col gap-4">
               {Works2.map((work, works2) => (
-                <>
+                <React.Fragment key={works2}>
                   <Link
                     onMouseEnter={() => {
                       setIsHoveredSecond(works2);
@@ -121,7 +120,7 @@ export default function Works() {
                       </motion.div>
                     )}
                   </AnimatePresence>
-                </>
+                </React.Fragment>
               ))}
             </div>
 

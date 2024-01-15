@@ -17,9 +17,9 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
       </head>
-      <body>
+      <body suppressHydrationWarning={true}>
         <NavBar />
-        <main className="p-10 mt-14">{children}</main>
+        {children}
       </body>
     </html>
   );
