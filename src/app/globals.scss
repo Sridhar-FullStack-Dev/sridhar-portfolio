@@ -18,3 +18,8 @@ body {
 ::-webkit-scrollbar {
   display: none;
 }
+
+::selection{
+  background: white;
+  color: black;
+}

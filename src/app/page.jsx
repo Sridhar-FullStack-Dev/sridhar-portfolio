@@ -1,9 +1,12 @@
 "use client";
 import { useEffect } from "react";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Services from "@/components/Services";
 import Works from "@/components/Works";
+import About from "@/components/About";
+import Doodle from "@/components/Doodle";
+import Contacts from "@/components/Contacts";
+import Services from "@/components/Services";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   useEffect(() => {
@@ -36,6 +39,15 @@ export default function Home() {
       </section>
       <section data-scroll-section id="services">
         <Works />
+      </section>
+      <section data-scroll-section id="services">
+        <Doodle />
+      </section>
+      <section data-scroll-section id="services">
+        <Contacts />
+      </section>
+      <section data-scroll-section id="services">
+        <Footer />
       </section>
     </div>
   );

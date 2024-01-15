@@ -71,6 +71,7 @@ export default function Works() {
                           alt={work.title}
                           height={30000}
                           width={30000}
+                          priority
                         />
                       </motion.div>
                     )}
@@ -115,6 +116,7 @@ export default function Works() {
                           alt={work.title}
                           height={30000}
                           width={30000}
+                          priority
                         />
                       </motion.div>
                     )}
@@ -123,7 +125,11 @@ export default function Works() {
               ))}
             </div>
 
-            <div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 1.5 }}
+            >
               <Image
                 src={"/assets/vector.jpg"}
                 alt="works"
@@ -131,7 +137,7 @@ export default function Works() {
                 width={1000}
                 className="h-[28rem] object-cover"
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </motion.div>
