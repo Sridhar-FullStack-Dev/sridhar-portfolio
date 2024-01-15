@@ -1,14 +1,18 @@
 "use client";
-import { useEffect } from "react";
 import Hero from "@/components/Hero";
-import Works from "@/components/Works";
 import About from "@/components/About";
+import Works from "@/components/Works";
 import Doodle from "@/components/Doodle";
-import Contacts from "@/components/Contacts";
-import Services from "@/components/Services";
 import Footer from "@/components/Footer";
 
+import { useEffect, useState } from "react";
+import Contacts from "@/components/Contacts";
+import Services from "@/components/Services";
+import Preloader from "@/components/Preloader";
+
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     (async () => {
       const LocomotiveScroll = (await import("locomotive-scroll")).default;
@@ -26,29 +30,41 @@ export default function Home() {
     })();
   }, []);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div data-scroll-container>
-      <section data-scroll-section id="home">
-        <Hero />
-      </section>
-      <section data-scroll-section id="about">
-        <About />
-      </section>
-      <section data-scroll-section id="services">
-        <Services />
-      </section>
-      <section data-scroll-section id="services">
-        <Works />
-      </section>
-      <section data-scroll-section id="services">
-        <Doodle />
-      </section>
-      <section data-scroll-section id="services">
-        <Contacts />
-      </section>
-      <section data-scroll-section id="services">
-        <Footer />
-      </section>
-    </div>
+    <>
+      <div data-scroll-container>
+        <section data-scroll-section id="home">
+          <Hero />
+        </section>
+        <section data-scroll-section id="about">
+          <About />
+        </section>
+        <section data-scroll-section id="services">
+          <Services />
+        </section>
+        <section data-scroll-section id="services">
+          <Works />
+        </section>
+        <section data-scroll-section id="services">
+          <Doodle />
+        </section>
+        <section data-scroll-section id="services">
+          <Contacts />
+        </section>
+        <section data-scroll-section id="services">
+          <Footer />
+        </section>
+      </div>
+
+      {isLoading && <Preloader />}
+    </>
   );
 }

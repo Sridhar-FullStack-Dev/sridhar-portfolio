@@ -1,8 +1,8 @@
+import gsap from "gsap";
 import Link from "next/link";
 import Image from "next/image";
-import gsap from "gsap";
-import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useRef, useEffect } from "react";
 import { TiTickOutline } from "react-icons/ti";
 import { GoArrowUpRight } from "react-icons/go";
 
@@ -129,7 +129,9 @@ export default function Footer() {
 
       <div className="flex w-full justify-between items-center mt-8 font-body text-[12px] ">
         <div>
-          <p className="">Design Strength :<br /> easily understandable format</p>
+          <p className="">
+            Design Strength :<br /> easily understandable format
+          </p>
         </div>
 
         <div>

@@ -1,6 +1,6 @@
+import { gsap } from "gsap";
 import Image from "next/image";
 import { useEffect } from "react";
-import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,7 +43,7 @@ export default function Doodle() {
       },
     });
   }, []);
-  
+
   return (
     <div className="text-white h-screen px-40">
       <div className="flex w-full justify-center items-center">
