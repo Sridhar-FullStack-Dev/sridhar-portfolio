@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const variants = {
-  clicked: { color: "#CEF34A", opacity: 1 },
+  clicked: { color: "#FFF", opacity: 1 },
   notClicked: { color: "#FFF", opacity: 0.6 },
 };
 
@@ -32,7 +32,7 @@ const Menu = [
 
 export default function MenuItems() {
   const [isClickedNav, setIsClickedNav] = useState(null);
-  const [isHovered, setIshovered] = useState(false);
+  const [isHovered, setIshovered] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = (index) => {
@@ -50,8 +50,8 @@ export default function MenuItems() {
           <div key={MenuKey}>
             <motion.div>
               <Link
-                onMouseEnter={() => setIshovered(true)}
-                onMouseLeave={() => setIshovered(false)}
+                onMouseEnter={() => setIshovered(MenuKey)}
+                onMouseLeave={() => setIshovered(null)}
                 href={Items.href}
                 className=" transition-all delay-100 duration-150 ease-linear text-sm"
               >
@@ -68,13 +68,13 @@ export default function MenuItems() {
             </motion.div>
 
             <AnimatePresence>
-              {isHovered && (
+              {isHovered == MenuKey && (
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ ease: "easeInOut", duration: 1 }}
-                  className="w-full h-[1px] bg-[#CEF34A] "
+                  className="w-full h-[1px] bg-white "
                 ></motion.div>
               )}
             </AnimatePresence>

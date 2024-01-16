@@ -113,13 +113,11 @@ export default function ServicesComponents() {
         >
           {Services1.map((service1, firstRow) => (
             <SwiperSlide
+              key={firstRow}
               onMouseEnter={() => setIsHovered(firstRow)}
               onMouseLeave={() => setIsHovered(null)}
             >
-              <div
-                key={firstRow}
-                className="sm:h-28 sm:w-28 md:h-36 md:w-36 bg-white bg-opacity-5 flex justify-center items-center sm:text-[12px] md:text-sm relative overflow-hidden"
-              >
+              <div className="sm:h-28 sm:w-28 md:h-36 md:w-36 bg-white bg-opacity-5 flex justify-center items-center sm:text-[12px] md:text-sm relative overflow-hidden">
                 <p className="text-center p-2">{service1.name}</p>
               </div>
 
@@ -169,13 +167,11 @@ export default function ServicesComponents() {
         >
           {Services2.map((service2, secondRow) => (
             <SwiperSlide
+              key={secondRow}
               onMouseEnter={() => setIsHoveredSecond(secondRow)}
               onMouseLeave={() => setIsHoveredSecond(null)}
             >
-              <div
-                key={secondRow}
-                className="sm:h-28 sm:w-28 md:h-36 md:w-36 bg-white bg-opacity-5 flex justify-center items-center sm:text-[12px] md:text-sm relative overflow-hidden"
-              >
+              <div className="sm:h-28 sm:w-28 md:h-36 md:w-36 bg-white bg-opacity-5 flex justify-center items-center sm:text-[12px] md:text-sm relative overflow-hidden">
                 <p className="text-center p-2">{service2.name}</p>
               </div>
 
