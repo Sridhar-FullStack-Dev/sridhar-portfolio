@@ -51,16 +51,16 @@ export default function Home() {
           <section data-scroll-section id="services">
             <Services />
           </section>
-          <section data-scroll-section id="services">
+          <section data-scroll-section id="works">
             <Works />
           </section>
-          <section data-scroll-section id="services">
+          <section data-scroll-section>
             <Doodle />
           </section>
-          <section data-scroll-section id="services">
+          <section data-scroll-section id="contacts">
             <Contacts />
           </section>
-          <section data-scroll-section id="services">
+          <section data-scroll-section>
             <Footer />
           </section>
         </div>

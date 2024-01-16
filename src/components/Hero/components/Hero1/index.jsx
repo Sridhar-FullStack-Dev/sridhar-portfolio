@@ -9,7 +9,7 @@ export default function Hero1() {
         alt=""
         height={512}
         width={512}
-        className="h-20 w-20 "
+        className="sm:h-10 sm:w-10 md:h-20 md:w-20"
       />
       <p>Convey your</p>
     </div>

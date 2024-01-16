@@ -6,11 +6,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Doodle() {
   useEffect(() => {
-    gsap.to(".my-image", {
+    gsap.to(".doodle-image", {
       scale: 1.5,
       ease: "Power1.inOut",
       scrollTrigger: {
-        trigger: ".my-image",
+        trigger: ".doodle-image",
         start: "top 80%",
         end: "top 10%",
         scrub: true,
@@ -45,9 +45,9 @@ export default function Doodle() {
   }, []);
 
   return (
-    <div className="text-white h-screen px-40">
+    <div className="text-white sm:py-10 md:px-8 md:py-40 overflow-hidden">
       <div className="flex w-full justify-center items-center">
-        <div className="h-32 w-96 rounded-full overflow-hidden">
+        <div className="sm:h-20 md:h-32 w-96 rounded-full overflow-hidden">
           <Image
             src={
               "https://images.pexels.com/photos/1566909/pexels-photo-1566909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -55,18 +55,18 @@ export default function Doodle() {
             alt="image"
             height={1000}
             width={4000}
-            className="h-32 w-[40rem] rounded-full my-image object-cover"
+            className="sm:h-20 md:h-32 w-[40rem] rounded-full doodle-image object-cover"
           />
         </div>
-        <p className="text-8xl hero-font pl-4">With</p>
+        <p className="sm:text-4xl md:text-8xl hero-font pl-4">With</p>
       </div>
 
       <div className="my-text">
-        <p className="text-8xl hero-font py-8 pl-4">Changes</p>
+        <p className="sm:text-4xl md:text-8xl hero-font py-8 pl-4">Changes</p>
       </div>
 
       <div className="flex w-full justify-center items-center">
-        <div className="h-32 w-96 rounded-full overflow-hidden">
+        <div className="sm:h-20 md:h-32 w-96 rounded-full overflow-hidden">
           <Image
             src={
               "https://images.pexels.com/photos/411195/pexels-photo-411195.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -75,14 +75,14 @@ export default function Doodle() {
             height={6000}
             width={6000}
             priority
-            className="h-32 w-[50rem] rounded-full object-cover"
+            className="sm:h-20 md:h-32 w-[50rem] rounded-full object-cover"
           />
         </div>
-        <p className="text-8xl hero-font pl-4">Comes</p>
+        <p className="sm:text-4xl md:text-8xl hero-font pl-4">Comes</p>
       </div>
 
       <div className="my-text2">
-        <p className="text-8xl hero-font py-8 text-right pl-4">Opportunity</p>
+        <p className="sm:text-4xl md:text-8xl hero-font py-8 text-right pl-4">Opportunity</p>
       </div>
     </div>
   );

@@ -29,17 +29,17 @@ const footerMarquee = [
 
 const footerLinks = [
   {
-    href: "/",
+    href: "https://github.com/Sridhar-FullStack-Dev",
     name: "Github",
     hover: "hover:text-gray-400",
   },
   {
-    href: "/",
+    href: "https://www.linkedin.com/in/sridhar-egambaram-1720721a8/",
     name: "Linkedin",
     hover: "hover:text-blue-600",
   },
   {
-    href: "/",
+    href: "https://www.instagram.com/sridhar._.official",
     name: "Instagram",
     hover: "hover:text-red-600",
   },
@@ -51,8 +51,7 @@ export default function Footer() {
 
   useEffect(() => {
     gsap.to(imageRef.current, {
-      width: "100%",
-      duration: 1,
+      width: "180rem",
       ease: "power1.inOut",
       yoyo: true,
       scrollTrigger: {
@@ -70,7 +69,7 @@ export default function Footer() {
         <motion.div
           animate={{ x: "-100%" }}
           transition={{ repeat: Infinity, duration: 40, ease: "easeOut" }}
-          className="text-white flex font-body font-bold text-4xl gap-4 relative uppercase"
+          className="text-white flex font-body font-bold sm:text-3xl md:text-4xl gap-4 relative uppercase"
         >
           {footerMarquee.map((marquee, first) => (
             <div
@@ -128,9 +127,9 @@ export default function Footer() {
         </motion.div>
       </div>
 
-      <div className="flex w-full justify-between items-center mt-8 font-body text-[12px] ">
+      <div className="flex w-full justify-between items-center mt-8 font-body sm:text-[6px] md:text-[12px] ">
         <div>
-          <p className="">
+          <p>
             Design Strength :<br /> easily understandable format
           </p>
         </div>
@@ -152,18 +151,17 @@ export default function Footer() {
 
       <div className="py-4 flex w-full justify-between gap-4 mt-4">
         <div className="w-3/4 overflow-hidden">
-          <Image
-            ref={imageRef}
+          <Image ref={imageRef}
             src={"/assets/img.jpg"}
             alt="sridhar-portfolio"
             height={10000}
             width={10000}
             priority
-            className="grayscale h-80 w-96 object-cover"
+            className="grayscale sm:h-40 sm:w-64 md:h-80 md:w-0 object-cover"
           />
         </div>
 
-        <div className="flex flex-col w-1/4 justify-center items-start gap-4 font-body text-3xl">
+        <div className="flex flex-col w-1/4 justify-center items-start gap-4 font-body sm:text-[10px] md:text-3xl">
           {footerLinks.map((links, index) => (
             <Link
               key={index}
@@ -179,15 +177,19 @@ export default function Footer() {
       </div>
 
       {/* Footer Bottom */}
-      <div className="text-[12px] font-body flex justify-between items-center mt-4">
+      <div className="sm:text-[5px] md:text-[12px] font-body flex justify-between items-end mt-4">
         <div>
           <p>&copy;{currentYear}</p>
           <p className="tracking-widest">sridhar-portfolio-ashen.vercel.app</p>
         </div>
 
-        <div className="flex items-center justify-center gap-2">
-          <p>This website contains cookies</p>
-          <TiTickOutline className="text-green-600" />
+        <div className="flex items-center justify-center sm:gap-0 md:gap-2">
+          <div>
+            <p>This website contains cookies</p>
+          </div>
+          <div>
+            <TiTickOutline className="text-green-600" />
+          </div>
         </div>
 
         <div>Thanks for reading &nbsp; &hearts;</div>

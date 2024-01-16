@@ -13,7 +13,7 @@ export default function Hero() {
         transition={{ ease: "easeInOut", duration: 1 }}
         data-scroll
         data-scroll-speed="0.2"
-        className="flex hero-font text-8xl flex-col justify-between items-center text-white w-full h-[80vh] overflow-hidden py-16"
+        className="flex hero-font sm:text-4xl md:text-8xl flex-col justify-between items-center text-white w-full sm:h-[50vh] md:h-[80vh] overflow-hidden py-16"
       >
         <Hero1 />
         <Hero2 />

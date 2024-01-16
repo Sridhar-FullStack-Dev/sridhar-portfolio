@@ -9,6 +9,62 @@ const Globe = dynamic(() => import("@/components/Globe"), {
   loading: () => <img src="/assets/placeholder.png"></img>,
 });
 
+const Works1 = [
+  {
+    href: "https://pixel-core.vercel.app",
+    title: "PixelCore - A Saas site",
+    image: "/assets/pixel-core-tamil.png",
+  },
+  {
+    href: "https://pexelcore.vercel.app",
+    title: "Language Features",
+    image: "/assets/Languages.png",
+  },
+  {
+    href: "https://pixel-core.vercel.app/home/en#contacts",
+    title: "Node Mailer",
+    image: "/assets/Nodemailer.png",
+  },
+  {
+    href: "https://pixel-core.vercel.app/home/en#services",
+    title: "Services Section",
+    image: "/assets/services-section.png",
+  },
+  {
+    href: "https://pixelcore.vercel.app",
+    title: "With Mordern Footer",
+    image: "/assets/mordern-footer.png",
+  },
+];
+
+const Works2 = [
+  {
+    href: "https://whoopy.vercel.app",
+    title: "Whoopy - Music App",
+    image: "/assets/whoopy.png",
+  },
+  {
+    href: "https://whoopy.vercel.app",
+    title: "Login & Sessions",
+    image: "/assets/Login.png",
+  },
+  {
+    href: "https://whoopy.vercel.app",
+    title: "User Friendly Searchbar",
+    image: "/assets/searchbar.png",
+  },
+  {
+    href: "https://pexelcore.vercel.app",
+    title: "Notification & more",
+    image: "/assets/tools.png",
+  },
+  {
+    href: "https://pixelcore.vercel.app",
+    title: "Varities of playlist",
+    image: "/assets/playlist.png",
+  },
+];
+
 export default function Works() {
   const [isHovered, setIsHovered] = useState(null);
   const [isHoveredSecond, setIsHoveredSecond] = useState(null);
@@ -19,22 +75,18 @@ export default function Works() {
         initial={{ opacity: 0, background: "#000" }}
         whileInView={{ opacity: 1, background: "#FFF" }}
         transition={{ ease: "linear", duration: 0.5, delay: 1 }}
-        className="h-screen text-black overflow-hidden rounded-[2rem]"
+        className="text-black overflow-hidden sm:rounded-[15px] md:rounded-[2rem] pb-8"
       >
-        <div
-          data-scroll
-          data-scroll-speed="0.1"
-          className="pt-12 text-center w-full hero-font text-6xl"
-        >
+        <div className="sm:pt-4 md:pt-12 text-center w-full hero-font sm:text-3xl md:text-6xl">
           <h1 className="tracking-wider">Some of my best projects</h1>
         </div>
 
         <div className="flex w-full justify-between items-center">
-          <div className="h-96 w-[60%]">
+          <div className="sm:hidden md:block h-96 w-[60%]">
             <Globe />
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex sm:flex-col md:flex-row items-center gap-4 sm:p-4 md:p-0 sm:text-[12px] md:text-base">
             <div className="flex flex-col gap-4">
               {Works1.map((work, works1) => (
                 <React.Fragment key={works1}>
@@ -128,6 +180,7 @@ export default function Works() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 1.5 }}
+              className="sm:hidden md:block"
             >
               <Image
                 src={"/assets/vector.jpg"}
@@ -143,59 +196,3 @@ export default function Works() {
     </div>
   );
 }
-
-const Works1 = [
-  {
-    href: "https://pixel-core.vercel.app",
-    title: "PixelCore - A Saas site",
-    image: "/assets/pixel-core-tamil.png",
-  },
-  {
-    href: "https://pexelcore.vercel.app",
-    title: "Language Features",
-    image: "/assets/Languages.png",
-  },
-  {
-    href: "https://pixel-core.vercel.app/home/en#contacts",
-    title: "Node Mailer",
-    image: "/assets/Nodemailer.png",
-  },
-  {
-    href: "https://pixel-core.vercel.app/home/en#services",
-    title: "Services Section",
-    image: "/assets/services-section.png",
-  },
-  {
-    href: "https://pixelcore.vercel.app",
-    title: "With Mordern Footer",
-    image: "/assets/mordern-footer.png",
-  },
-];
-
-const Works2 = [
-  {
-    href: "https://whoopy.vercel.app",
-    title: "Whoopy - Music App",
-    image: "/assets/whoopy.png",
-  },
-  {
-    href: "https://whoopy.vercel.app",
-    title: "Login & Sessions",
-    image: "/assets/Login.png",
-  },
-  {
-    href: "https://whoopy.vercel.app",
-    title: "User Friendly Searchbar",
-    image: "/assets/searchbar.png",
-  },
-  {
-    href: "https://pexelcore.vercel.app",
-    title: "Notification & more",
-    image: "/assets/tools.png",
-  },
-  {
-    href: "https://pixelcore.vercel.app",
-    title: "Varities of playlist",
-    image: "/assets/playlist.png",
-  },
-];

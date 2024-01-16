@@ -1,8 +1,8 @@
 import gsap from "gsap";
 import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa6";
 import { useState, useEffect, useRef } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function ExtraMenu() {
   const [isHovered, setIshovered] = useState(false);
@@ -33,6 +33,7 @@ export default function ExtraMenu() {
       initial={{ opacity: 0, x: "50px" }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ ease: "easeInOut", duration: 1, delay: 0.3 }}
+      className="sm:hidden md:block"
     >
       <Link
         onMouseEnter={hoverEffectOn}

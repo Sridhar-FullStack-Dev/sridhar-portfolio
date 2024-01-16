@@ -1,5 +1,12 @@
-import { useState } from "react";
+import gsap from "gsap";
+import { FaArrowRight } from "react-icons/fa6";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
+// SwiperJS
+import "swiper/css";
+import "swiper/css/pagination";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const Services1 = [
   {
@@ -62,101 +69,146 @@ const Services2 = [
     description: "Machine Learning & Natural Language Processing",
   },
 ];
+
 export default function ServicesComponents() {
   const [isHovered, setIsHovered] = useState(null);
   const [isHoveredSecond, setIsHoveredSecond] = useState(null);
 
+  // GSAP
+  const arrowRef = useRef(null);
+
+  useEffect(() => {
+    gsap.to(arrowRef.current, {
+      x: 10,
+      duration: 1,
+      repeat: -1,
+      yoyo: true,
+      ease: "power1.inOut",
+    });
+  }, []);
+
   return (
-    <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ ease: "linear", duration: 0.5, delay: 0.3 }}
-        className="text-white flex w-full gap-4 mt-8"
-      >
-        {Services1.map((service, first) => {
-          return (
-            <div
-              key={first}
-              onMouseEnter={() => setIsHovered(first)}
+    <div className="text-white mt-8 font-body">
+      <div className="w-full sm:pl-5 md:pl-0">
+        <Swiper
+          breakpoints={{
+            300: {
+              slidesPerView: 2,
+              spaceBetween: 5,
+            },
+            640: {
+              slidesPerView: 4,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 6,
+              spaceBetween: 40,
+            },
+            1024: {
+              slidesPerView: 7,
+              spaceBetween: 5,
+            },
+          }}
+          className="mySwiper"
+        >
+          {Services1.map((service1, firstRow) => (
+            <SwiperSlide
+              onMouseEnter={() => setIsHovered(firstRow)}
               onMouseLeave={() => setIsHovered(null)}
-              className="h-40 w-40 bg-white bg-opacity-5 flex items-center justify-center p-4 text-sm relative overflow-hidden"
             >
-              <p className="text-center p-2">{service.name}</p>
+              <div
+                key={firstRow}
+                className="sm:h-28 sm:w-28 md:h-36 md:w-36 bg-white bg-opacity-5 flex justify-center items-center sm:text-[12px] md:text-sm relative overflow-hidden"
+              >
+                <p className="text-center p-2">{service1.name}</p>
+              </div>
 
               <AnimatePresence>
-                {isHovered == first && (
+                {isHovered == firstRow && (
                   <motion.div
-                    initial={{ top: 200 }}
-                    animate={{ top: 0 }}
-                    exit={{ top: 200 }}
+                    initial={{ y: "-100%" }}
+                    animate={{ y: 0 }}
+                    exit={{ y: "-100%" }}
                     transition={{
                       ease: "easeInOut",
                       duration: 0.5,
-                      delay: 0.1,
+                      delay: 0.3,
                     }}
-                    className="absolute top-0 left-0 h-40 w-40 bg-white text-black flex items-center justify-center p-4 text-sm"
+                    onClick={() => setIsHovered(null)}
+                    className="sm:h-28 sm:w-28 md:h-36 md:w-36 bg-white text-black flex flex-col justify-center items-center sm:text-[12px] md:text-sm absolute top-0 left-0 p-2"
                   >
-                    <div>
-                      <p className="font-bold text-center font-body p-2">
-                        {service.name}
-                      </p>
-                      <div className="text-center">
-                        <p className="p-2 text-[12px]">{service.description}</p>
-                      </div>
-                    </div>
+                    <p className="text-center font-bold">{service1.name}</p>
+                    <p className="text-center">{service1.description}</p>
                   </motion.div>
                 )}
               </AnimatePresence>
-            </div>
-          );
-        })}
-      </motion.div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ ease: "linear", duration: 0.5, delay: 0.5 }}
-        className="text-white flex w-full gap-4 mt-8"
-      >
-        {Services2.map((service, second) => {
-          return (
-            <div
-              key={second}
-              onMouseEnter={() => setIsHoveredSecond(second)}
+        <Swiper
+          breakpoints={{
+            300: {
+              slidesPerView: 2,
+              spaceBetween: 5,
+            },
+            640: {
+              slidesPerView: 4,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 6,
+              spaceBetween: 40,
+            },
+            1024: {
+              slidesPerView: 7,
+              spaceBetween: 5,
+            },
+          }}
+          className="mySwiper mt-8"
+        >
+          {Services2.map((service2, secondRow) => (
+            <SwiperSlide
+              onMouseEnter={() => setIsHoveredSecond(secondRow)}
               onMouseLeave={() => setIsHoveredSecond(null)}
-              className="h-40 w-40 bg-white bg-opacity-5 flex items-center justify-center p-4 text-sm relative overflow-hidden"
             >
-              <p className="text-center p-2">{service.name}</p>
+              <div
+                key={secondRow}
+                className="sm:h-28 sm:w-28 md:h-36 md:w-36 bg-white bg-opacity-5 flex justify-center items-center sm:text-[12px] md:text-sm relative overflow-hidden"
+              >
+                <p className="text-center p-2">{service2.name}</p>
+              </div>
 
               <AnimatePresence>
-                {isHoveredSecond == second && (
+                {isHoveredSecond == secondRow && (
                   <motion.div
-                    initial={{ top: 200 }}
-                    animate={{ top: 0 }}
-                    exit={{ top: 200 }}
+                    initial={{ y: "-100%" }}
+                    animate={{ y: 0 }}
+                    exit={{ y: "-100%" }}
                     transition={{
                       ease: "easeInOut",
                       duration: 0.5,
-                      delay: 0.1,
+                      delay: 0.3,
                     }}
-                    className="absolute top-0 left-0 h-40 w-40 bg-white text-black flex items-center justify-center p-4 text-sm"
+                    onClick={() => setIsHoveredSecond(null)}
+                    className="sm:h-28 sm:w-28 md:h-36 md:w-36 bg-white text-black flex flex-col justify-center items-center sm:text-[12px] md:text-sm absolute top-0 left-0 p-2"
                   >
-                    <div>
-                      <p className="font-bold text-center font-body p-2">
-                        {service.name}
-                      </p>
-                      <div className="text-center">
-                        <p className="p-2 text-[12px]">{service.description}</p>
-                      </div>
-                    </div>
+                    <p className="text-center font-bold">{service2.name}</p>
+                    <p className="text-center">{service2.description}</p>
                   </motion.div>
                 )}
               </AnimatePresence>
-            </div>
-          );
-        })}
-      </motion.div>
-    </>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        <div className="sm:flex md:hidden text-[10px] py-2 text-right items-center">
+          <div>swipe to see more &nbsp;</div>
+          <div ref={arrowRef}>
+            <FaArrowRight />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

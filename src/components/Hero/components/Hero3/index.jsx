@@ -6,12 +6,12 @@ const Globe = dynamic(() => import("@/components/Globe"), {
 
 export default function Hero3() {
   return (
-    <div data-scroll data-scroll-speed="0.1" className="flex justify-between items-center">
+    <div className="flex justify-between items-center">
       <div>
         <p>Designs</p>
       </div>
 
-      <div className="w-52">
+      <div className="sm:w-32 sm:h-32 md:w-52 md:h-52 ml-4">
         <Globe />
       </div>
     </div>

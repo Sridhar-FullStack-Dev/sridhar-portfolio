@@ -45,34 +45,34 @@ export default function Contacts() {
   };
 
   return (
-    <div data-scroll data-scroll-speed="0.3">
+    <div data-scroll data-scroll-speed="0.3" className="pb-8">
       <motion.div
         initial={{ opacity: 0, background: "#000" }}
         whileInView={{ opacity: 1, background: "#FFF" }}
         transition={{ ease: "linear", duration: 0.5, delay: 1 }}
-        className="h-screen text-black overflow-hidden rounded-[2rem] hero-font"
+        className="text-black overflow-hidden sm:rounded-[30px] md:rounded-[2rem] hero-font pb-8"
       >
         <div data-scroll data-scroll-speed="0.1" className="py-12 w-full">
-          <div className="flex items-center justify-center gap-4 text-7xl">
+          <div className="flex items-center justify-center gap-4 sm:text-2xl md:text-7xl">
             <p>Ready</p>
-            <p className="h-[1px] w-36 bg-black"></p>
+            <p className="h-[1px] sm:w-14 md:w-36 bg-black"></p>
             <p>to work</p>
           </div>
 
-          <div className="flex items-center justify-center gap-4 text-7xl mt-8">
-            <p className="h-[1px] w-36 bg-black"></p>
+          <div className="flex items-center justify-center gap-4 sm:text-2xl md:text-7xl mt-8">
+            <p className="h-[1px] sm:w-14 md:w-36 bg-black"></p>
             <p>Work</p>
-            <p>
+            <p className="whitespace-nowrap">
               with me <span className="font-bold">?</span>
             </p>
           </div>
         </div>
 
-        <div className="text-2xl px-14 font-bold mt-5">
+        <div className="sm:text-base md:text-2xl sm:px-4 md:px-14 font-bold mt-5">
           <form onSubmit={sendMail}>
             {/* First Name */}
-            <div className="flex justify-between items-center gap-8">
-              <div className="w-1/2 flex">
+            <div className="flex sm:flex-col md:flex-row justify-between items-center gap-8">
+              <div className="md:w-1/2 flex">
                 <label
                   htmlFor="firstName"
                   className="tracking-wide whitespace-nowrap"
@@ -93,7 +93,7 @@ export default function Contacts() {
               </div>
 
               {/* Second Name */}
-              <div className="flex w-1/2">
+              <div className="flex md:w-1/2">
                 <label
                   htmlFor="secondName"
                   className="tracking-wide whitespace-nowrap"
@@ -115,8 +115,8 @@ export default function Contacts() {
             </div>
 
             {/* Email */}
-            <div className="mt-8 flex justify-between items-center gap-8">
-              <div className="flex w-1/2">
+            <div className="mt-8 flex sm:flex-col md:flex-row justify-between items-center gap-8">
+              <div className="flex md:w-1/2">
                 <label
                   htmlFor="email"
                   className="tracking-wide whitespace-nowrap"
@@ -136,7 +136,7 @@ export default function Contacts() {
                 />
               </div>
 
-              <div className="flex w-1/2">
+              <div className="flex md:w-1/2">
                 <label
                   htmlFor="description"
                   className="tracking-wide whitespace-nowrap"
