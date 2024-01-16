@@ -156,7 +156,7 @@ export default function Contacts() {
               </div>
             </div>
 
-            <div className="flex justify-center items-center mt-16">
+            <div className="flex justify-center items-center mt-16 cursor-none">
               <button
                 type="submit"
                 className="h-20 w-52 border border-black bg-transparent rounded-full tracking-wide"

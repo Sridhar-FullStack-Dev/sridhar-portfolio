@@ -8,7 +8,7 @@ import Description from "./components/Description";
 export default function About() {
   useEffect(() => {
     gsap.to(".about-image", {
-      scale: 1.5,
+      scale: 2,
       ease: "Power1.inOut",
       scrollTrigger: {
         trigger: ".about-image",
@@ -51,7 +51,7 @@ export default function About() {
         />
       </div>
 
-      <div className="sm:block md:hidden h-32 w-full rounded-lg overflow-hidden">
+      <div className="sm:block md:hidden h-36 w-full rounded-lg overflow-hidden">
         <Image
           src={
             "https://images.pexels.com/photos/1566909/pexels-photo-1566909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -59,7 +59,7 @@ export default function About() {
           alt="image"
           height={1000}
           width={4000}
-          className="h-32 w-[30rem] about-image object-cover"
+          className="h-36 w-full about-image object-cover"
         />
       </div>
 

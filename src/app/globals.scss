@@ -12,14 +12,35 @@ body {
   padding: 0;
   background: black;
   box-sizing: border-box;
-  cursor: default;
+  cursor: none;
 }
 
 ::-webkit-scrollbar {
   display: none;
 }
 
-::selection{
+::selection {
   background: white;
   color: black;
+}
+
+a {
+  cursor: none;
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999;
+  mix-blend-mode: difference;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
 }

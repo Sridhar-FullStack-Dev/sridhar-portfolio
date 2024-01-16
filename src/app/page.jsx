@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Works from "@/components/Works";
@@ -9,6 +10,7 @@ import { useEffect, useState } from "react";
 import Contacts from "@/components/Contacts";
 import Services from "@/components/Services";
 import Preloader from "@/components/Preloader";
+import Cursor from "@/components/Cursor";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -24,7 +26,6 @@ export default function Home() {
       });
 
       setTimeout(() => {
-        document.body.style.cursor = "default";
         window.scrollTo(0, 0);
       }, 2000);
     })();
@@ -40,6 +41,7 @@ export default function Home() {
 
   return (
     <>
+      <Cursor />
       <main className="p-10 mt-14">
         <div data-scroll-container>
           <section data-scroll-section id="home">

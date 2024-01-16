@@ -1,7 +1,5 @@
 import Link from "next/link";
 import { useState } from "react";
-import { CiMenuBurger } from "react-icons/ci";
-import { IoCloseOutline } from "react-icons/io5";
 import { motion, AnimatePresence } from "framer-motion";
 
 const variants = {

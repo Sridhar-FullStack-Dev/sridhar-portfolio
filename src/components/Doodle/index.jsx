@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Doodle() {
   useEffect(() => {
     gsap.to(".doodle-image", {
-      scale: 1.5,
+      scale: 2,
       ease: "Power1.inOut",
       scrollTrigger: {
         trigger: ".doodle-image",
@@ -20,7 +20,7 @@ export default function Doodle() {
 
   useEffect(() => {
     gsap.to(".my-text", {
-      x: "10vw",
+      x: "17vw",
       ease: "Power1.inOut",
       scrollTrigger: {
         trigger: ".my-text",
@@ -33,7 +33,7 @@ export default function Doodle() {
 
   useEffect(() => {
     gsap.to(".my-text2", {
-      x: "-10vw",
+      x: "-17vw",
       ease: "Power1.inOut",
       scrollTrigger: {
         trigger: ".my-text",
