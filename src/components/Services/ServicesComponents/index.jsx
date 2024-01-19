@@ -101,10 +101,14 @@ export default function ServicesComponents() {
               spaceBetween: 20,
             },
             768: {
-              slidesPerView: 6,
+              slidesPerView: 4,
               spaceBetween: 40,
             },
             1024: {
+              slidesPerView: 5,
+              spaceBetween: 5,
+            },
+            1440: {
               slidesPerView: 7,
               spaceBetween: 5,
             },
@@ -155,10 +159,14 @@ export default function ServicesComponents() {
               spaceBetween: 20,
             },
             768: {
-              slidesPerView: 6,
+              slidesPerView: 4,
               spaceBetween: 40,
             },
             1024: {
+              slidesPerView: 5,
+              spaceBetween: 5,
+            },
+            1440: {
               slidesPerView: 7,
               spaceBetween: 5,
             },
@@ -198,7 +206,7 @@ export default function ServicesComponents() {
           ))}
         </Swiper>
 
-        <div className="sm:flex md:hidden text-[10px] py-2 text-right items-center">
+        <div className="sm:flex lg:hidden text-[10px] py-2 text-right items-center">
           <div>swipe to see more &nbsp;</div>
           <div ref={arrowRef}>
             <FaArrowRight />

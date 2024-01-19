@@ -45,7 +45,7 @@ export default function Doodle() {
   }, []);
 
   return (
-    <div className="text-white sm:py-10 md:px-8 md:py-40 overflow-hidden">
+    <div className="text-white sm:py-10 md:px-8 md:py-40 sm:text-4xl md:text-6xl lg:text-8xl overflow-hidden">
       <div className="flex w-full justify-center items-center">
         <div className="sm:h-20 md:h-32 w-96 rounded-full overflow-hidden">
           <Image
@@ -58,11 +58,11 @@ export default function Doodle() {
             className="sm:h-20 md:h-32 w-[40rem] rounded-full doodle-image object-cover"
           />
         </div>
-        <p className="sm:text-4xl md:text-8xl hero-font pl-4">With</p>
+        <p className=" hero-font pl-4">With</p>
       </div>
 
       <div className="my-text">
-        <p className="sm:text-4xl md:text-8xl hero-font py-8 pl-4">Changes</p>
+        <p className=" hero-font py-8 pl-4">Changes</p>
       </div>
 
       <div className="flex w-full justify-center items-center">
@@ -78,11 +78,11 @@ export default function Doodle() {
             className="sm:h-20 md:h-32 w-[50rem] rounded-full object-cover"
           />
         </div>
-        <p className="sm:text-4xl md:text-8xl hero-font pl-4">Comes</p>
+        <p className=" hero-font pl-4">Comes</p>
       </div>
 
       <div className="my-text2">
-        <p className="sm:text-4xl md:text-8xl hero-font py-8 text-right pl-4">Opportunity</p>
+        <p className=" hero-font py-8 text-right pl-4">Opportunity</p>
       </div>
     </div>
   );

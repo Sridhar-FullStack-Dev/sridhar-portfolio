@@ -11,7 +11,7 @@ export default function Hero3() {
         <p>Designs</p>
       </div>
 
-      <div className="sm:w-32 sm:h-32 md:w-52 md:h-52 ml-4">
+      <div className="sm:w-32 sm:h-32 md:h-48 md:w-48 lg:w-52 lg:h-52 ml-4">
         <Globe />
       </div>
     </div>

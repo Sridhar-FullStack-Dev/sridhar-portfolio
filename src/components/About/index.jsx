@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Description from "./components/Description";
 
-
 export default function About() {
   useEffect(() => {
     gsap.to(".about-image", {
@@ -20,11 +19,7 @@ export default function About() {
   }, []);
 
   return (
-    <div
-      data-scroll
-      data-scroll-speed="0.2"
-      className="text-white overflow-hidden sm:py-8 md:py-16"
-    >
+    <div className="text-white overflow-hidden sm:py-8 md:py-16">
       <motion.h1
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 0.5 }}

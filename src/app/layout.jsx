@@ -1,3 +1,4 @@
+import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.scss";
 import NavBar from "@/components/Navbar";
 
@@ -19,7 +20,7 @@ export default function RootLayout({ children }) {
       </head>
       <body suppressHydrationWarning={true}>
         <NavBar />
-        {children}
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   );

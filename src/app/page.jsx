@@ -1,35 +1,19 @@
 "use client";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+
+// Components
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Works from "@/components/Works";
 import Doodle from "@/components/Doodle";
 import Footer from "@/components/Footer";
-
-import { useEffect, useState } from "react";
+import Cursor from "@/components/Cursor";
 import Contacts from "@/components/Contacts";
 import Services from "@/components/Services";
 import Preloader from "@/components/Preloader";
-import Cursor from "@/components/Cursor";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    (async () => {
-      const LocomotiveScroll = (await import("locomotive-scroll")).default;
-      const locomotiveScroll = new LocomotiveScroll({
-        el: document.querySelector("[data-scroll-container]"),
-        smooth: true,
-        smoothMobile: true,
-        resetNativeScroll: true,
-      });
-
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-      }, 2000);
-    })();
-  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -43,26 +27,26 @@ export default function Home() {
     <>
       <Cursor />
       <main className="p-10 mt-14">
-        <div data-scroll-container>
-          <section data-scroll-section id="home">
+        <div>
+          <section id="home">
             <Hero />
           </section>
-          <section data-scroll-section id="about">
+          <section id="about">
             <About />
           </section>
-          <section data-scroll-section id="services">
+          <section id="services">
             <Services />
           </section>
-          <section data-scroll-section id="works">
+          <section id="works">
             <Works />
           </section>
-          <section data-scroll-section>
+          <section>
             <Doodle />
           </section>
-          <section data-scroll-section id="contacts">
+          <section id="contacts">
             <Contacts />
           </section>
-          <section data-scroll-section>
+          <section>
             <Footer />
           </section>
         </div>

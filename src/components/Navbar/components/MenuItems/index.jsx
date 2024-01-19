@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLenis } from "@studio-freight/react-lenis";
+import { lerp } from "three/src/math/MathUtils";
 
 const variants = {
   clicked: { color: "#FFF", opacity: 1 },
@@ -28,6 +30,10 @@ const Menu = [
     name: "Contact",
     href: "#contacts",
   },
+  {
+    name: "Resume",
+    href: "https://www.canva.com/design/DAF6IXzgwtw/6VgJE4b0j1EaISBoUFo3Gg/view?utm_content=DAF6IXzgwtw&utm_campaign=designshare&utm_medium=link&utm_source=editor",
+  },
 ];
 
 export default function MenuItems() {
@@ -38,18 +44,23 @@ export default function MenuItems() {
   const handleClick = (index) => {
     setIsClickedNav(index);
   };
+
+  // Lenis
+  const lenis = useLenis();
+
   return (
     <>
       <motion.div
         initial={{ opacity: 0, y: "-50px" }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ ease: "easeInOut", duration: 1, delay: 0.3 }}
-        className="w-96 flex justify-between items-center sm:hidden md:flex"
+        className="w-96 flex justify-between items-center sm:hidden lg:flex"
       >
         {Menu.map((Items, MenuKey) => (
           <div key={MenuKey}>
             <motion.div>
               <Link
+                onClick={() => lenis.scrollTo(`${Items.href}`, { lerp: 0.02 })}
                 onMouseEnter={() => setIshovered(MenuKey)}
                 onMouseLeave={() => setIshovered(null)}
                 href={Items.href}
@@ -82,8 +93,11 @@ export default function MenuItems() {
         ))}
       </motion.div>
 
-      <div className=" sm:block md:hidden">
-        <div onClick={() => setIsOpen(!isOpen)} className="bg-white font-body rounded-full py-2 px-4 text-base text-black">
+      <div className=" sm:block lg:hidden">
+        <div
+          onClick={() => setIsOpen(!isOpen)}
+          className="bg-white font-body rounded-full py-2 px-4 text-base text-black"
+        >
           <p>Menu</p>
         </div>
 
@@ -94,7 +108,7 @@ export default function MenuItems() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ ease: "easeInOut", duration: 0.5, delay: 0.1 }}
-              className="fixed top-0 right-0 h-screen w-3/4 bg-white text-black hero-font rounded-lg text-3xl"
+              className="fixed top-0 right-0 h-screen bg-white text-black hero-font rounded-lg sm:text-2xl lg:text-3xl"
             >
               <div
                 onClick={() => setIsOpen(false)}
@@ -118,18 +132,19 @@ export default function MenuItems() {
                         delay: 0.3,
                       }}
                       key={mobileNav}
-                      className="p-6"
+                      className="sm:py-3 sm:px-6 md:py-4 lg:py-6"
                     >
                       <Link href={Items.href}>{Items.name}</Link>
                     </motion.li>
                   ))}
                 </ul>
 
-                <div className="px-4">
+                <div className="px-4 text-sm">
                   <div className="h-[0.5px] w-full bg-black rounded"></div>
 
-                  <div className="italic font-body pt-2">984-354-9354</div>
-                  <div className="italic font-body pt-2">TN - IND</div>
+                  <div className="italic font-body pt-2">
+                    984-354-9354 | TN - IND
+                  </div>
                 </div>
               </div>
             </motion.div>

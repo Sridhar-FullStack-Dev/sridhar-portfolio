@@ -33,7 +33,7 @@ export default function ExtraMenu() {
       initial={{ opacity: 0, x: "50px" }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ ease: "easeInOut", duration: 1, delay: 0.3 }}
-      className="sm:hidden md:block"
+      className="sm:hidden lg:block"
     >
       <Link
         onMouseEnter={hoverEffectOn}
@@ -55,7 +55,7 @@ export default function ExtraMenu() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ ease: "easeInOut", duration: 1 }}
-            className="w-full h-[1px] bg-[#CEF34A] "
+            className="w-full h-[1px] bg-white "
           ></motion.div>
         )}
       </AnimatePresence>

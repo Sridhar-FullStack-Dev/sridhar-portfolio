@@ -149,7 +149,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="py-4 flex w-full justify-between gap-4 mt-4">
+      <div className="py-4 flex w-full justify-between gap-4 mt-8">
         <div className="w-3/4 overflow-hidden">
           <Image ref={imageRef}
             src={"/assets/img.jpg"}
@@ -161,7 +161,7 @@ export default function Footer() {
           />
         </div>
 
-        <div className="flex flex-col w-1/4 justify-center items-start gap-4 font-body sm:text-[10px] md:text-3xl">
+        <div className="flex flex-col w-1/4 justify-center items-start gap-4 font-body sm:text-[10px] md:text-2xl lg:text-3xl">
           {footerLinks.map((links, index) => (
             <Link
               key={index}

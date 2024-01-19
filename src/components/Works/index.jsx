@@ -70,7 +70,7 @@ export default function Works() {
   const [isHoveredSecond, setIsHoveredSecond] = useState(null);
 
   return (
-    <div data-scroll data-scroll-speed="0.3">
+    <div className="pt-16">
       <motion.div
         initial={{ opacity: 0, background: "#000" }}
         whileInView={{ opacity: 1, background: "#FFF" }}
@@ -81,12 +81,12 @@ export default function Works() {
           <h1 className="tracking-wider">Some of my best projects</h1>
         </div>
 
-        <div className="flex w-full justify-between items-center">
-          <div className="sm:hidden md:block h-96 w-[60%]">
+        <div className="flex w-full md:justify-center lg:justify-between items-center">
+          <div className="sm:hidden lg:block h-96 w-[60%]">
             <Globe />
           </div>
 
-          <div className="flex sm:flex-col md:flex-row items-center gap-4 sm:p-4 md:p-0 sm:text-[12px] md:text-base">
+          <div className="flex sm:flex-col lg:flex-row items-center gap-4 sm:p-4 lg:p-0 sm:text-[12px] md:text-base">
             <div className="flex flex-col gap-4">
               {Works1.map((work, works1) => (
                 <React.Fragment key={works1}>
@@ -180,7 +180,7 @@ export default function Works() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 1.5 }}
-              className="sm:hidden md:block"
+              className="sm:hidden lg:block"
             >
               <Image
                 src={"/assets/vector.jpg"}

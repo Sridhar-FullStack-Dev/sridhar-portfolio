@@ -45,7 +45,7 @@ export default function Contacts() {
   };
 
   return (
-    <div data-scroll data-scroll-speed="0.3" className="pb-8">
+    <div className="pb-8">
       <motion.div
         initial={{ opacity: 0, background: "#000" }}
         whileInView={{ opacity: 1, background: "#FFF" }}
@@ -53,13 +53,13 @@ export default function Contacts() {
         className="text-black overflow-hidden sm:rounded-[30px] md:rounded-[2rem] hero-font pb-8"
       >
         <div data-scroll data-scroll-speed="0.1" className="py-12 w-full">
-          <div className="flex items-center justify-center gap-4 sm:text-2xl md:text-7xl">
+          <div className="flex items-center justify-center gap-4 sm:text-2xl md:text-6xl lg:text-7xl">
             <p>Ready</p>
             <p className="h-[1px] sm:w-14 md:w-36 bg-black"></p>
             <p>to work</p>
           </div>
 
-          <div className="flex items-center justify-center gap-4 sm:text-2xl md:text-7xl mt-8">
+          <div className="flex items-center justify-center gap-4 sm:text-2xl md:text-6xl lg:text-7xl mt-8">
             <p className="h-[1px] sm:w-14 md:w-36 bg-black"></p>
             <p>Work</p>
             <p className="whitespace-nowrap">
