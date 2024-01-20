@@ -2,7 +2,6 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLenis } from "@studio-freight/react-lenis";
-import { lerp } from "three/src/math/MathUtils";
 
 const variants = {
   clicked: { color: "#FFF", opacity: 1 },
@@ -64,7 +63,7 @@ export default function MenuItems() {
                 onMouseEnter={() => setIshovered(MenuKey)}
                 onMouseLeave={() => setIshovered(null)}
                 href={Items.href}
-                className=" transition-all delay-100 duration-150 ease-linear text-sm"
+                className="transition-all delay-100 duration-150 ease-linear text-sm"
               >
                 <motion.span
                   variants={variants}
@@ -134,7 +133,14 @@ export default function MenuItems() {
                       key={mobileNav}
                       className="sm:py-3 sm:px-6 md:py-4 lg:py-6"
                     >
-                      <Link href={Items.href}>{Items.name}</Link>
+                      <Link
+                        href={Items.href}
+                        onClick={() =>
+                          lenis.scrollTo(`${Items.href}`, { lerp: 0.02 })
+                        }
+                      >
+                        {Items.name}
+                      </Link>
                     </motion.li>
                   ))}
                 </ul>

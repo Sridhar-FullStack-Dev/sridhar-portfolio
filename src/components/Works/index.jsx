@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import React, { useState } from "react";
 import dynamic from "next/dynamic";
+import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const Globe = dynamic(() => import("@/components/Globe"), {
@@ -16,7 +16,7 @@ const Works1 = [
     image: "/assets/pixel-core-tamil.png",
   },
   {
-    href: "https://pexelcore.vercel.app",
+    href: "https://pixel-core.vercel.app",
     title: "Language Features",
     image: "/assets/Languages.png",
   },
@@ -54,7 +54,7 @@ const Works2 = [
     image: "/assets/searchbar.png",
   },
   {
-    href: "https://pexelcore.vercel.app",
+    href: "https://pixel-core.vercel.app",
     title: "Notification & more",
     image: "/assets/tools.png",
   },
@@ -81,8 +81,8 @@ export default function Works() {
           <h1 className="tracking-wider">Some of my best projects</h1>
         </div>
 
-        <div className="flex w-full md:justify-center lg:justify-between items-center">
-          <div className="sm:hidden lg:block h-96 w-[60%]">
+        <div className="flex w-full md:justify-center lg:justify-between items-center lg:pr-4">
+          <div className="sm:hidden lg:block h-96 lg:w-[45%] xl:w-[60%]">
             <Globe />
           </div>
 
@@ -90,19 +90,17 @@ export default function Works() {
             <div className="flex flex-col gap-4">
               {Works1.map((work, works1) => (
                 <React.Fragment key={works1}>
-                  <Link
+                  <div
                     onMouseEnter={() => {
                       setIsHovered(works1);
                       setIsHoveredSecond(null);
                     }}
-                    onMouseLeave={() => setIsHovered(null)}
-                    href={work.href}
                   >
                     <div className="border border-black p-4 w-64 rounded flex justify-between items-center gap-4">
                       <p>{work.title}</p>
                       <div className="h-4 w-4 rounded-full bg-black"></div>
                     </div>
-                  </Link>
+                  </div>
 
                   <AnimatePresence>
                     {isHovered == works1 && (
@@ -115,15 +113,29 @@ export default function Works() {
                           duration: 0.5,
                           delay: 0.3,
                         }}
-                        className="fixed left-1/2 top-12 bg-white p-14"
+                        className="fixed left-1/2 top-40 bg-white p-14 z-[9]"
                       >
-                        <Image
-                          src={work.image}
-                          alt={work.title}
-                          height={30000}
-                          width={30000}
-                          priority
-                        />
+                        <Link href={work.href} className="relative">
+                          <Image
+                            src={work.image}
+                            alt={work.title}
+                            height={30000}
+                            width={30000}
+                            priority
+                          />
+
+                          <div className="bg-blue-500 h-20 w-20 rounded-full flex justify-center items-center absolute top-32 left-60">
+                            <p className="font-body text-white font-bold tracking-wide">
+                              View
+                            </p>
+                          </div>
+                        </Link>
+                        <div
+                          onClick={() => setIsHovered(null)}
+                          className="font-body underline text-sm absolute bottom-5 left-5 cursor-pointer"
+                        >
+                          Close
+                        </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -134,20 +146,19 @@ export default function Works() {
             <div className="flex flex-col gap-4">
               {Works2.map((work, works2) => (
                 <React.Fragment key={works2}>
-                  <Link
+                  <div
                     onMouseEnter={() => {
                       setIsHoveredSecond(works2);
                       setIsHovered(null);
                     }}
                     onMouseLeave={() => setIsHoveredSecond(null)}
                     key={works2}
-                    href={work.href}
                   >
                     <div className="border border-black p-4 w-64 rounded flex justify-between items-center gap-4">
                       <p>{work.title}</p>
                       <div className="h-4 w-4 rounded-full bg-black"></div>
                     </div>
-                  </Link>
+                  </div>
 
                   <AnimatePresence>
                     {isHoveredSecond == works2 && (
@@ -160,15 +171,33 @@ export default function Works() {
                           duration: 0.5,
                           delay: 0.3,
                         }}
-                        className="fixed right-1/2 top-12 bg-white p-14"
+                        className="fixed right-1/2 top-40 bg-white p-14"
                       >
-                        <Image
-                          src={work.image}
-                          alt={work.title}
-                          height={30000}
-                          width={30000}
-                          priority
-                        />
+                        <Link
+                          href={work.href}
+                          className="relative"
+                          onClick={() => setIsHovered(null)}
+                        >
+                          <Image
+                            src={work.image}
+                            alt={work.title}
+                            height={30000}
+                            width={30000}
+                            priority
+                          />
+
+                          <div className="bg-blue-500 h-20 w-20 rounded-full flex justify-center items-center absolute top-32 left-60">
+                            <p className="font-body text-white font-bold tracking-wide">
+                              View
+                            </p>
+                          </div>
+                        </Link>
+                        <div
+                          onClick={() => setIsHovered(null)}
+                          className="font-body underline text-sm absolute bottom-5 left-5 cursor-pointer"
+                        >
+                          Close
+                        </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -180,7 +209,7 @@ export default function Works() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 1.5 }}
-              className="sm:hidden lg:block"
+              className="sm:hidden xl:block"
             >
               <Image
                 src={"/assets/vector.jpg"}
