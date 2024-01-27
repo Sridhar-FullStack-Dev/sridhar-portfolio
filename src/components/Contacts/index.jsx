@@ -162,9 +162,9 @@ export default function Contacts() {
                 className="h-20 w-52 border border-black bg-transparent rounded-full tracking-wide"
               >
                 {Loading ? (
-                  "loading..."
+                  "Sending..."
                 ) : success ? (
-                  "success"
+                  "Success"
                 ) : (
                   <div className="flex items-center justify-center gap-4">
                     Send

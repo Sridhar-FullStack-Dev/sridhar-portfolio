@@ -18,10 +18,13 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 50000);
-
+    }, 7000);
     return () => clearTimeout(timer);
   }, []);
+
+  if (isLoading) {
+    return <Preloader />;
+  }
 
   return (
     <>
@@ -51,8 +54,6 @@ export default function Home() {
           </section>
         </div>
       </main>
-
-      {isLoading && <Preloader />}
     </>
   );
 }
