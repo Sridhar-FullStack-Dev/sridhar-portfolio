@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 
 // Components
 import Hero from "@/components/Hero";
@@ -13,18 +13,9 @@ import Services from "@/components/Services";
 import Preloader from "@/components/Preloader";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
-    <>
+    <Suspense fallback={<Preloader />}>
       <Cursor />
       <main className="p-10 mt-14">
         <div>
@@ -51,8 +42,6 @@ export default function Home() {
           </section>
         </div>
       </main>
-
-      {isLoading && <Preloader />}
-    </>
+    </Suspense>
   );
 }

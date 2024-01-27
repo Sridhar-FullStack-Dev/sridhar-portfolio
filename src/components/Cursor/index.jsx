@@ -45,7 +45,7 @@ export default function Cursor() {
       animate={{ opacity: 1 }}
       transition={{ ease: "easeIn", duration: 0.5, delay: 1 }}
       id="custom-cursor"
-      className="custom-cursor"
+      className="custom-cursor sm:hidden lg:block"
     ></motion.div>
   );
 }
