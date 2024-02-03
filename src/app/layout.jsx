@@ -5,7 +5,7 @@ import NavBar from "@/components/Navbar";
 export const metadata = {
   title: "Portfolio - Sridhar Full Stack Developer",
   description: "A creative web developer who works for your business growth",
-  metadataBase: "http://localhost:3000",
+  metadataBase: "https://sridhar-portfolio-ashen.vercel.app/",
   openGraph: {
     title: "Portfolio - Sridhar Full Stack Developer",
     description: "A creative web developer who works for your business growth",

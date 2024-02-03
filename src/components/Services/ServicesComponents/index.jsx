@@ -109,7 +109,7 @@ export default function ServicesComponents() {
               spaceBetween: 5,
             },
             1440: {
-              slidesPerView: 8,
+              slidesPerView: 7,
               spaceBetween: 5,
             },
           }}

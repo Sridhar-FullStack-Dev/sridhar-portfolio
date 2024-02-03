@@ -43,6 +43,11 @@ const footerLinks = [
     name: "Instagram",
     hover: "hover:text-red-600",
   },
+  {
+    href: "tel:+919843849354",
+    name: "9843849354",
+    hover: "hover:text-green-600 sm:hidden md:block"
+  }
 ];
 
 export default function Footer() {
@@ -166,7 +171,7 @@ export default function Footer() {
             <Link
               key={index}
               href={links.href}
-              className={`${links.hover} underline transition-all duration-150 delay-75 ease-linear`}
+              className={`${links.hover} underline transition-all duration-150 delay-75 ease-linear mb-2`}
             >
               <p className="flex gap-2">
                 {links.name} <GoArrowUpRight />
@@ -177,7 +182,7 @@ export default function Footer() {
       </div>
 
       {/* Footer Bottom */}
-      <div className="sm:text-[5px] md:text-[12px] font-body flex justify-between items-end mt-4">
+      <div className="sm:text-[5px] md:text-[12px] font-body flex justify-between items-end mt-8">
         <div>
           <p>&copy;{currentYear}</p>
           <p className="tracking-widest">sridhar-portfolio-ashen.vercel.app</p>

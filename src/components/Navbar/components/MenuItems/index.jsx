@@ -149,7 +149,7 @@ export default function MenuItems() {
                   <div className="h-[0.5px] w-full bg-black rounded"></div>
 
                   <div className="italic font-body pt-2">
-                    984-354-9354 | TN - IND
+                    984-384-9354 | TN - IND
                   </div>
                 </div>
               </div>
