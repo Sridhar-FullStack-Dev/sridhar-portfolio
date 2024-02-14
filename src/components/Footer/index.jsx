@@ -56,7 +56,7 @@ export default function Footer() {
 
   useEffect(() => {
     gsap.to(imageRef.current, {
-      width: "60rem",
+      width: "90rem",
       ease: "power1.inOut",
       yoyo: true,
       scrollTrigger: {
