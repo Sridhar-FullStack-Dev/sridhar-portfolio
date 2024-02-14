@@ -46,8 +46,8 @@ const footerLinks = [
   {
     href: "tel:+919843849354",
     name: "9843849354",
-    hover: "hover:text-green-600 sm:hidden md:block"
-  }
+    hover: "hover:text-green-600 sm:hidden md:block",
+  },
 ];
 
 export default function Footer() {
@@ -56,7 +56,7 @@ export default function Footer() {
 
   useEffect(() => {
     gsap.to(imageRef.current, {
-      width: "180rem",
+      width: "60rem",
       ease: "power1.inOut",
       yoyo: true,
       scrollTrigger: {
@@ -156,7 +156,8 @@ export default function Footer() {
 
       <div className="py-4 flex w-full justify-between gap-4 mt-8">
         <div className="w-3/4 overflow-hidden">
-          <Image ref={imageRef}
+          <Image
+            ref={imageRef}
             src={"/assets/img.jpg"}
             alt="sridhar-portfolio"
             height={10000}
@@ -198,6 +199,10 @@ export default function Footer() {
         </div>
 
         <div>Thanks for reading &nbsp; &hearts;</div>
+      </div>
+
+      <div className="mt-16">
+        <div className="h-[1px] w-full bg-white bg-opacity-5"></div>
       </div>
     </div>
   );
