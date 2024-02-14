@@ -62,9 +62,9 @@ const skillIcons2 = [
 
 export default function Description() {
   return (
-    <div className="flex w-full p-4 gap-8 sm:text-[12px] md:text-sm">
+    <div className="flex justify-between sm:flex-col md:flex-row p-4 gap-8 sm:text-[12px] md:text-sm">
       <div>
-        <div className="flex justify-between items-center w-96">
+        <div className="flex justify-between items-center sm:w-full">
           <div className="flex justify-center items-center bg-white h-10 w-10 rounded-full">
             <svg
               width="41"
@@ -149,7 +149,7 @@ export default function Description() {
       </div>
 
       <div>
-        <div className="flex justify-between items-center w-96">
+        <div className="flex justify-between items-center sm:w-full">
           <div
             className="flex justify-center items-center bg-white h-10 w-10 rounded-full text-black text-xl"
             title="React JS"

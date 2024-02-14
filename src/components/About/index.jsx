@@ -32,9 +32,9 @@ export default function About() {
         ABOUT
       </motion.h1>
 
-      <div className="flex justify-between mt-4">
+      <div className="flex justify-between items-center mt-4">
         <div
-          className="w-1/2 h-[70vh] rounded-[15px] overflow-hidden"
+          className="w-1/2 h-[70vh] rounded-[15px] overflow-hidden sm:hidden xl:block"
           data-scroll
           data-scroll-speed="0.1"
         >
