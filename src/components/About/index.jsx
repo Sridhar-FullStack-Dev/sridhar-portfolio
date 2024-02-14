@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Description from "./components/Description";
 
+
 export default function About() {
   useEffect(() => {
     gsap.to(".about-image", {
@@ -19,7 +20,9 @@ export default function About() {
   }, []);
 
   return (
-    <div className="text-white overflow-hidden sm:py-8 md:py-16">
+    <div
+      className="text-white overflow-hidden sm:py-8 md:py-16"
+    >
       <motion.h1
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 0.5 }}
@@ -29,36 +32,27 @@ export default function About() {
         ABOUT
       </motion.h1>
 
-      <div className="flex w-full sm:hidden md:flex">
-        <video
-          autoPlay
-          muted
-          loop
-          src={"/assets/chips.mp4"}
-          className="h-96 w-1/2"
-        />
-        <video
-          autoPlay
-          muted
-          loop
-          src={"/assets/interface-ii.mp4"}
-          className="h-96 w-1/2"
-        />
-      </div>
+      <div className="flex justify-between mt-4">
+        <div
+          className="w-1/2 h-[70vh] rounded-[15px] overflow-hidden"
+          data-scroll
+          data-scroll-speed="0.1"
+        >
+          <div>
+            <Image
+              src={"/assets/img2.jpg"}
+              alt="Author"
+              height={1000}
+              width={1000}
+              className="w-[30vw] h-[70vh] rounded-[15px] object-cover grayscale"
+            />
+          </div>
+        </div>
 
-      <div className="sm:block md:hidden h-36 w-full rounded-lg overflow-hidden">
-        <Image
-          src={
-            "https://images.pexels.com/photos/1566909/pexels-photo-1566909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          }
-          alt="image"
-          height={1000}
-          width={4000}
-          className="h-36 w-full about-image object-cover"
-        />
+        <div className="w-full">
+          <Description />
+        </div>
       </div>
-
-      <Description />
     </div>
   );
 }
