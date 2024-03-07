@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
       </head>
-      <body suppressHydrationWarning={true}>
+      <body suppressHydrationWarning={true} className="antialiased">
         <NavBar />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
