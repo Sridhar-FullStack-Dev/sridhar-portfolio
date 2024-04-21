@@ -1,6 +1,7 @@
-import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.scss";
 import NavBar from "@/components/Navbar";
+import { Analytics } from "@vercel/analytics/react"
+import SmoothScroll from "@/components/SmoothScroll";
 
 export const metadata = {
   title: "Portfolio - Sridhar Full Stack Developer",
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
       <body className="antialiased">
         <NavBar />
         <SmoothScroll>{children}</SmoothScroll>
+        <Analytics />
       </body>
     </html>
   );
