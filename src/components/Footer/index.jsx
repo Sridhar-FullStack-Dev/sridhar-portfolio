@@ -1,8 +1,6 @@
-import gsap from "gsap";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useRef, useEffect } from "react";
 import { TiTickOutline } from "react-icons/ti";
 import { GoArrowUpRight } from "react-icons/go";
 
@@ -52,21 +50,6 @@ const footerLinks = [
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const imageRef = useRef();
-
-  useEffect(() => {
-    gsap.to(imageRef.current, {
-      width: "60rem",
-      ease: "power1.inOut",
-      yoyo: true,
-      scrollTrigger: {
-        trigger: imageRef.current,
-        start: "top center",
-        end: "bottom center",
-        scrub: true,
-      },
-    });
-  }, []);
 
   return (
     <div className="text-white overflow-hidden">
@@ -155,17 +138,21 @@ export default function Footer() {
       </div>
 
       <div className="py-4 flex w-full justify-between gap-4 mt-8">
-        <div className="w-3/4 overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ ease: "easeInOut", duration: 1, delay: 0.8 }}
+          className="w-3/4 overflow-hidden"
+        >
           <Image
-            ref={imageRef}
             src={"/assets/img.jpg"}
             alt="sridhar-portfolio"
             height={10000}
             width={10000}
             priority
-            className="grayscale sm:h-40 sm:w-64 md:h-80 md:w-0 object-cover"
+            className="grayscale sm:h-40 sm:w-64 md:h-80 md:w-96 lg:w-[40rem] object-cover"
           />
-        </div>
+        </motion.div>
 
         <div className="flex flex-col w-1/4 justify-center items-start gap-4 font-body sm:text-[10px] md:text-2xl lg:text-3xl">
           {footerLinks.map((links, index) => (
@@ -201,7 +188,7 @@ export default function Footer() {
         <div>Thanks for reading &nbsp; &hearts;</div>
       </div>
 
-      <div className="mt-16">
+      <div className="mt-4">
         <div className="h-[1px] w-full bg-white bg-opacity-5"></div>
       </div>
     </div>
