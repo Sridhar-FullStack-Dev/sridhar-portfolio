@@ -2,6 +2,8 @@ import "./globals.scss";
 import NavBar from "@/components/Navbar";
 import { Analytics } from "@vercel/analytics/react"
 import SmoothScroll from "@/components/SmoothScroll";
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
 
 export const metadata = {
   title: "Portfolio - Sridhar Full Stack Developer",
@@ -24,6 +26,7 @@ export default function RootLayout({ children }) {
         <NavBar />
         <SmoothScroll>{children}</SmoothScroll>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
