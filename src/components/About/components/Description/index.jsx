@@ -96,7 +96,7 @@ export default function Description() {
           ))}
         </div>
 
-        <div className="text-justify w-96 mt-4">
+        <div className="text-justify w-full mt-4">
           <p className="text-justify font-bold font-body tracking-wider transition-all ease-linear duration-100 delay-75">
             As a Fullstack developer, I bring expertise in React.js, Next.js,
             Tailwind, RouteAPIs, Node.js, Webflow, and a suite of other web
@@ -168,7 +168,7 @@ export default function Description() {
           ))}
         </div>
 
-        <div className="text-justify-between w-96 mt-4">
+        <div className="text-justify-between w-full mt-4">
           <p className="text-justify font-bold font-body tracking-wider transition-all ease-linear duration-100 delay-75">
             I'm your go-to Full Stack Developer, creating stunning webpages for
             your business / shops / etc & creating fully functionable bug-free

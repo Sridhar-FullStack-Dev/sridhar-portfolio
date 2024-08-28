@@ -17,7 +17,7 @@
     "framer-motion": "^10.18.0",
     "framer-motion-3d": "^10.18.0",
     "gsap": "^3.12.4",
-    "next": "14.0.4",
+    "next": "^14.2.7",
     "nodemailer": "^6.9.8",
     "npm": "^10.3.0",
     "react": "^18",

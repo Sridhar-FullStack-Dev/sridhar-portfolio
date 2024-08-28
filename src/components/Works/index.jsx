@@ -86,7 +86,7 @@ export default function Works() {
             <Globe />
           </div>
 
-          <div className="flex sm:flex-col lg:flex-row items-center gap-4 sm:p-4 lg:p-0 sm:text-[12px] md:text-base">
+          <div className="flex sm:w-full md:w-auto sm:flex-col lg:flex-row items-center gap-4 sm:p-4 lg:p-0 sm:text-[12px] md:text-base">
             <div className="flex flex-col gap-4">
               {Works1.map((work, works1) => (
                 <React.Fragment key={works1}>
