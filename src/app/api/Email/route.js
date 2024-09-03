@@ -1,5 +1,6 @@
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
+import EmailTemplate from "@/components/EmailTemplate";
 
 export async function POST(request) {
   try {
@@ -12,7 +13,9 @@ export async function POST(request) {
       secure: true,
       auth: {
         user: process.env.NODEMAILER_EMAIL,
+        // user: "sridhar22122002@gmail.com",
         pass: process.env.NODEMAILER_PW,
+        // pass: "abzgummsibeyygei",
       },
     });
 
@@ -20,24 +23,17 @@ export async function POST(request) {
       from: email,
       to: "sridhar22122002@gmail.com",
       subject: "Message from Portfolio",
-      html: `
-        <div style="font-family: 'Arial', sans-serif; background-color: #f4f4f4; padding: 20px; max-width: 600px; margin: 0 auto;">
-          <ul style="list-style-type: none; padding: 0;">
-            <li style="margin-bottom: 10px; font-size: 16px; color: #555;">Name: ${firstName}</li>
-            <li style="margin-bottom: 10px; font-size: 16px; color: #555;">Name: ${secondName}</li>
-            <li style="margin-bottom: 10px; font-size: 16px; color: #555;">Email: ${email}</li>
-            <h2 style="color: #333;">Project Details: </h2>
-            <li style="margin-bottom: 10px; font-size: 16px; color: #555;">${description}</li>
-          </ul>
-
-        </div>
-      `,
+      html: EmailTemplate({ firstName, secondName, email, description }),
     };
 
     await transporter.sendMail(mailOption);
 
     return NextResponse.json({ email: "Success" }, { status: 200 });
   } catch (error) {
-    return NextResponse.json({ email: "failed" }, { status: 500 });
+    console.error("Email sending error:", error);
+    return NextResponse.json(
+      { email: "failed", error: error.message },
+      { status: 500 }
+    );
   }
 }

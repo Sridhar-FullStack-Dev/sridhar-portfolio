@@ -15,7 +15,7 @@ export default function Contacts() {
   const sendMail = async (e) => {
     e.preventDefault();
     setLoading(true);
-
+  
     try {
       const response = await fetch("/api/Email", {
         method: "POST",
@@ -23,12 +23,13 @@ export default function Contacts() {
           "content-type": "application/json",
         },
         body: JSON.stringify({
-          name,
+          firstName,
+          secondName,
           email,
           description,
         }),
       });
-
+  
       if (response.ok) {
         console.log(await response.json());
         setSuccess(true);
@@ -43,6 +44,7 @@ export default function Contacts() {
       setLoading(false);
     }
   };
+  
 
   return (
     <div className="pb-8">

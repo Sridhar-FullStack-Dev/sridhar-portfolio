@@ -109,7 +109,7 @@ export default function Description() {
           </p>
 
           {/* Languages known */}
-          <div className="mt-8 font-body font-bold">
+          <div className="mt-12 font-body font-bold">
             Languages
             <div className="pt-4 pr-8">
               <p>Tamil</p>
