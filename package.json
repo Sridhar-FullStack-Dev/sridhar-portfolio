@@ -11,7 +11,7 @@
   "dependencies": {
     "@react-three/drei": "^9.93.0",
     "@react-three/fiber": "^8.15.13",
-    "@studio-freight/react-lenis": "^0.0.43",
+    "lenis": "^1.1.16",
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.10",
     "framer-motion": "^10.18.0",
